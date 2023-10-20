@@ -58,6 +58,11 @@ public class ConsultaController {
 
     @PostMapping("/consultas")
     public ResponseEntity<Consulta>saveConsulta(@RequestBody Consulta consulta){
+        Optional<?>historialId =service.findHistorialByID(consulta.getHistorial().getId());
+        //Optional<?>doctorId =service.findDoctorByID(consulta.getIdDoctor);
+        //!historialId.isPresent() or  !doctorId.isPresent()
+        if (!historialId.isPresent())
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveConsulta(consulta));
     }
 
@@ -116,6 +121,10 @@ public class ConsultaController {
 
     @PostMapping("/historial")
     public ResponseEntity<HistorialMedico>saveHistorialMedico(@RequestBody HistorialMedico historial){
+       //Optional<?>pacienteId =service.findPersonaByID(histoorial.getIdPaciente);
+       // if (!pacienteId.isPresent()){
+        //    return ResponseEntity.notFound().build();
+       // }
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(historial));
     }
 
