@@ -16,9 +16,9 @@ public class HistorialMedico {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_historial")
-    private int id;
+    private Long id;
 
-    private int idPersona;
+    private int idPaciente;
     private String descripcion;
 
 

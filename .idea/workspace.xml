@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Equipo-Streams.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consultas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consultas/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consultas/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/consultas/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consultas/src/main/java/com/minsait/consultas/controller/ConsultaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/consultas/src/main/java/com/minsait/consultas/controller/ConsultaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consultas/src/main/java/com/minsait/consultas/model/entity/Consulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/consultas/src/main/java/com/minsait/consultas/model/entity/Consulta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/consultas/src/main/java/com/minsait/consultas/model/entity/HistorialMedico.java" beforeDir="false" afterPath="$PROJECT_DIR$/consultas/src/main/java/com/minsait/consultas/model/entity/HistorialMedico.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,18 +33,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects Java/Equipo-Streams&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "CNM-39",
+    "last_opened_file_path": "C:/Projects Java/Equipo-Streams",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "copyright"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.ConsultasApplication (1)">
     <configuration name="ConsultasApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.minsait.consultas.ConsultasApplication" />

@@ -16,7 +16,7 @@ public class Consulta {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_consulta")
     private int id;
-    private int idDoctor;
+    private Long idDoctor;
     private Date fecha;
     private String estatura;
     private String peso;
