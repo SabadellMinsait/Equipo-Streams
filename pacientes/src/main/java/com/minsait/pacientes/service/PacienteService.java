@@ -14,8 +14,8 @@ public interface PacienteService {
 
     public Optional<Paciente> findByNombre(String nombre);
 
-    public Optional<Paciente> savePaciente(Paciente paciente);
+    Paciente save(Paciente paciente);
 
-    public Optional<Paciente> deleteById(Long id);
+    public void deleteById(Long id);
 
 }
