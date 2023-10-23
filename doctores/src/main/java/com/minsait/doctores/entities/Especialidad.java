@@ -1,7 +1,6 @@
 package com.minsait.doctores.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.sun.istack.internal.NotNull;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +15,7 @@ public class Especialidad {
     @Column(name = "id_especialidad")
     private Long id;
 
-    @NotNull
+
     private String nombre;
 
     @ManyToOne()

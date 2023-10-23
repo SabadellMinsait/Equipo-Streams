@@ -1,8 +1,6 @@
 package com.minsait.doctores.entities;
 
-import com.sun.istack.internal.NotNull;
 import jakarta.persistence.*;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,11 +17,9 @@ public class Doctor {
     private Long id;
 
 
-    @NotNull
+
     private String nombre;
-    @NotNull
     private String apellido;
-    @NotNull
     private String matricula;
     private Long id_especialidad;
 
