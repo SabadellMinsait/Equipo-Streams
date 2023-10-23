@@ -44,7 +44,7 @@ public class ConsultaController {
     }
 
 
-    @PatchMapping("/consultas/{id}")
+    @PutMapping("/consultas/{id}")
     public ResponseEntity<Consulta>updateConsulta(@PathVariable Long id,@RequestBody Consulta consulta){
         Optional<Consulta>consulta1=service.findConsultaByID(id);
         if (!consulta1.isPresent()){
@@ -107,7 +107,7 @@ public class ConsultaController {
     }
 
 
-    @PatchMapping("/historial/{id}")
+    @PutMapping("/historial/{id}")
     public ResponseEntity<HistorialMedico>updateHistorialMedico(@PathVariable Long id,@RequestBody HistorialMedico historial){
         Optional<HistorialMedico>historial1=service.findHistorialByID(id);
         if (!historial1.isPresent()){
@@ -128,6 +128,25 @@ public class ConsultaController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(historial));
     }
 
+
+
+    public ResponseEntity<?>saveConsul(Consulta consulta){
+        if (consulta.getHistorial()!=null){
+            Optional<HistorialMedico>historial=service.findHistorialByID(consulta.getHistorial().getId());
+            historial.ifPresent(consulta::setHistorial);
+        }
+        //if (consulta.getHistorial()!=null){
+       //     Optional<HistorialMedico>historial=service.findHistorialByID(consulta.getHistorial().getId());
+         //   historial.ifPresent(consulta::setHistorial);
+       // }
+        try{
+            return ResponseEntity.ok(service.saveConsulta(consulta));
+        }catch (Exception e){
+                throw new IllegalArgumentException("Error al registrar la consulta");
+        }
+
+
+    }
 
 
 }
