@@ -44,7 +44,7 @@ public class ConsultaController {
     }
 
 
-    @PatchMapping("/consultas/{id}")
+    @PutMapping("/consultas/{id}")
     public ResponseEntity<Consulta>updateConsulta(@PathVariable Long id,@RequestBody Consulta consulta){
         Optional<Consulta>consulta1=service.findConsultaByID(id);
         if (!consulta1.isPresent()){
@@ -58,6 +58,11 @@ public class ConsultaController {
 
     @PostMapping("/consultas")
     public ResponseEntity<Consulta>saveConsulta(@RequestBody Consulta consulta){
+        Optional<?>historialId =service.findHistorialByID(consulta.getHistorial().getId());
+        //Optional<?>doctorId =service.findDoctorByID(consulta.getIdDoctor);
+        //!historialId.isPresent() or  !doctorId.isPresent()
+        if (!historialId.isPresent())
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveConsulta(consulta));
     }
 
@@ -102,7 +107,7 @@ public class ConsultaController {
     }
 
 
-    @PatchMapping("/historial/{id}")
+    @PutMapping("/historial/{id}")
     public ResponseEntity<HistorialMedico>updateHistorialMedico(@PathVariable Long id,@RequestBody HistorialMedico historial){
         Optional<HistorialMedico>historial1=service.findHistorialByID(id);
         if (!historial1.isPresent()){
@@ -116,9 +121,32 @@ public class ConsultaController {
 
     @PostMapping("/historial")
     public ResponseEntity<HistorialMedico>saveHistorialMedico(@RequestBody HistorialMedico historial){
+       //Optional<?>pacienteId =service.findPersonaByID(histoorial.getIdPaciente);
+       // if (!pacienteId.isPresent()){
+        //    return ResponseEntity.notFound().build();
+       // }
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(historial));
     }
 
+
+
+    public ResponseEntity<?>saveConsul(Consulta consulta){
+        if (consulta.getHistorial()!=null){
+            Optional<HistorialMedico>historial=service.findHistorialByID(consulta.getHistorial().getId());
+            historial.ifPresent(consulta::setHistorial);
+        }
+        //if (consulta.getHistorial()!=null){
+       //     Optional<HistorialMedico>historial=service.findHistorialByID(consulta.getHistorial().getId());
+         //   historial.ifPresent(consulta::setHistorial);
+       // }
+        try{
+            return ResponseEntity.ok(service.saveConsulta(consulta));
+        }catch (Exception e){
+                throw new IllegalArgumentException("Error al registrar la consulta");
+        }
+
+
+    }
 
 
 }
