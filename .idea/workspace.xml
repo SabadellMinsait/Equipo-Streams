@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/doctores/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/DoctoresApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/DoctoresApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/controller/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Especialidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/repository/DoctoresRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/repository/DoctoresRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorServiceImplement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/DoctoresApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/DoctoresApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Especialidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Especialidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/DoctoresRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/DoctoresRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorServiceImplement.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorServiceImplement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/test-classes/com/minsait/Doctores/DoctoresApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2X0BT4I6QF6XuzuMK1M67uvsEjX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects Java/Equipo-Streams&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.ConsultasApplication">
+    <configuration name="ConsultasApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.minsait.consultas.ConsultasApplication" />
+      <module name="consultas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.minsait.consultas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsultasApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.minsait.consultas.ConsultasApplication" />
+      <module name="Equipo-Streams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.minsait.consultas.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Equipo-Streams" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Equipo-Streams" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConsultasApplication (1)" />
+        <item itemvalue="Application.ConsultasApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="" />
+      <created>1697756124925</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697756124925</updated>
+    </task>
+    <servers />
+  </component>
+</project>

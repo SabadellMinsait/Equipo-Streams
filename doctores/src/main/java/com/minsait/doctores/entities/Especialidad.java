@@ -5,22 +5,22 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
-@Table(name = "especialidad")
+@Table(name = "especialidades")
 @Getter
 @Setter
 public class Especialidad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_especialidad")
-    private Long id;
-
-
+   private Long id;
     private String nombre;
 
-    @ManyToOne()
+    @OneToMany(mappedBy = "especialidad", fetch = FetchType.EAGER)
     @JsonIgnore
-    private Doctor doctor;
+    private List<Doctor> doctores;
 
 
 }
