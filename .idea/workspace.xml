@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="" />
+    <list default="true" id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/doctores/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/DoctoresApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/DoctoresApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/configuration/SwaggerConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/configuration/SwaggerConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/EspecialidadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/EspecialidadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Especialidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Especialidad.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/DoctoresRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/DoctoresRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/EspecialRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/EspecialRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorServiceImplement.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorServiceImplement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/EspecialidadServImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/EspecialidadServImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/EspecialidadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/EspecialidadService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,18 +50,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "CNM-47",
-    "last_opened_file_path": "C:/Projects Java/Equipo-Streams",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "copyright"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CNM-47&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects Java/Equipo-Streams&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.ConsultasApplication">
     <configuration name="ConsultasApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.minsait.consultas.ConsultasApplication" />
