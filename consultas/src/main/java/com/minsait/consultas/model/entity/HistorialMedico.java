@@ -18,7 +18,7 @@ public class HistorialMedico {
     @Column(name = "id_historial")
     private Long id;
 
-    private int idPaciente;
+    private Long idPaciente;
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE},mappedBy = "historial")
     @JsonIgnore
     private List<Consulta> consulta;

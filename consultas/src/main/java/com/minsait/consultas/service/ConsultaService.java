@@ -14,6 +14,9 @@ public interface ConsultaService {
     public Consulta saveConsulta(Consulta consulta);
 
 
+    public Optional<HistorialMedico>findByidPaciente(Long id);
+
+
 
 
     public List<HistorialMedico>findHistorial();
