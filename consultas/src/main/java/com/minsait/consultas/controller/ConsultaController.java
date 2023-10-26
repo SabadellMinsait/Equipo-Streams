@@ -1,7 +1,10 @@
 package com.minsait.consultas.controller;
 
+import com.minsait.consultas.clients.PacientesClient;
 import com.minsait.consultas.model.entity.Consulta;
+import com.minsait.consultas.model.entity.HistorialDTO;
 import com.minsait.consultas.model.entity.HistorialMedico;
+import com.minsait.consultas.model.entity.Paciente;
 import com.minsait.consultas.service.ConsultaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,9 +16,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/api")
-public class ConsultaController {
+public class
+ConsultaController {
     @Autowired
-    ConsultaService service;
+    private ConsultaService service;
+
+    @Autowired
+    private PacientesClient pacientesService;
 
     @GetMapping("/consultas")
     public List<Consulta> findAll(){
@@ -83,6 +90,23 @@ public class ConsultaController {
     }
 
 
+    @GetMapping("/historial-paciente/{id}")
+    public ResponseEntity<HistorialDTO> findHistorialMedicoByPacienteID(@PathVariable Long id){
+        Optional<HistorialMedico> historial= service.findByidPaciente(id);
+        if (!historial.isPresent()){
+            return ResponseEntity.notFound().build();
+        }
+        HistorialMedico HistorialMedicoAct=historial.get();
+
+        HistorialDTO historialDTO = new HistorialDTO();
+
+        historialDTO.setIdPaciente(HistorialMedicoAct.getIdPaciente());
+        historialDTO.setId(HistorialMedicoAct.getId());
+        historialDTO.setConsulta(HistorialMedicoAct.getConsulta());
+
+        return ResponseEntity.ok(historialDTO);
+    }
+
     @DeleteMapping("/historial/{id}")
     public ResponseEntity<HistorialMedico>deleteHistorialById(@PathVariable Long id){
         Optional<HistorialMedico>historial=service.findHistorialByID(id);
@@ -109,10 +133,10 @@ public class ConsultaController {
 
     @PostMapping("/historial")
     public ResponseEntity<HistorialMedico>saveHistorialMedico(@RequestBody HistorialMedico historial){
-       //Optional<?>pacienteId =service.findPersonaByID(histoorial.getIdPaciente);
-       // if (!pacienteId.isPresent()){
-        //    return ResponseEntity.notFound().build();
-       // }
+       Optional<Paciente>pacienteId =pacientesService.findById(historial.getIdPaciente());
+        if (!pacienteId.isPresent()){
+            throw new IllegalArgumentException("No se encuentra el paciente ingresado");
+       }
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(historial));
     }
 
@@ -132,6 +156,10 @@ public class ConsultaController {
             throw new IllegalArgumentException("Error al registrar la consulta");
         }
     }
+
+
+
+
 
 
 }
