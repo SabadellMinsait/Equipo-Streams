@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/doctores/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/DoctoresApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/DoctoresApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/controller/DoctorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Doctor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Especialidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/entities/Especialidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/repository/DoctoresRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/repository/DoctoresRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorServiceImplement.java" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/src/main/java/com/minsait/doctores/service/DoctorServiceImplement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/DoctoresApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/DoctoresApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/controller/DoctorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Doctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Especialidad.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/entities/Especialidad.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/DoctoresRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/repository/DoctoresRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorServiceImplement.class" beforeDir="false" afterPath="$PROJECT_DIR$/doctores/target/classes/com/minsait/Doctores/service/DoctorServiceImplement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doctores/target/test-classes/com/minsait/Doctores/DoctoresApplicationTests.class" beforeDir="false" />
-    </list>
+    <list default="true" id="aac2d190-e8a5-40cb-9b64-83ccb8037259" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

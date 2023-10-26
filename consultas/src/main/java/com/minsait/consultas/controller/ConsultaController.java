@@ -13,7 +13,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/v1/api")
-public class ConsultaController {
+public class
+ConsultaController {
     @Autowired
     ConsultaService service;
 
