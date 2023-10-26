@@ -72,4 +72,11 @@ public class ConsultaServiceImpl implements ConsultaService{
     public HistorialMedico saveHistorial(HistorialMedico historial) {
         return historialrepository.save(historial);
     }
+
+
+    @Override
+    @Transactional
+    public Optional<HistorialMedico> findByidPaciente(Long id) {
+        return historialrepository.findByidPaciente(id);
+    }
 }
