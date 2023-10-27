@@ -3,6 +3,7 @@ package com.minsait.pacientes.model.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,9 +19,10 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     Long id;
+
     private String calle;
     private int numero;
-    private int codigoPostal;
+    private String codigoPostal;
     private String colonia;
     private String estado;
     @OneToOne(mappedBy = "direccion")
