@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  msvc-consultas:
+    hostname: consultas
+    build: ./consultas
+    ports:
+      - "8091:8091"
+  msvc-doctores:
+    hostname: doctores
+    build: ./doctores
+    ports:
+      - "8092:8092"
+  msvc-pacientes:
+    hostname: pacientes
+    build: ./pacientes
+    ports:
+      - "8080:8080"
