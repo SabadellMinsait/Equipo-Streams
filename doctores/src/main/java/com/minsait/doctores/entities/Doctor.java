@@ -1,11 +1,13 @@
 package com.minsait.doctores.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import jakarta.websocket.server.PathParam;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
+import java.math.BigInteger;
+
 
 @Entity
 @Table(name = "doctores")
@@ -16,8 +18,12 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_doctor")
     private Long id;
+    @NotBlank
     private String nombre;
+    @NotBlank
     private String apellido;
+    @Pattern(regexp = "^[0-9]*$", message = "Solo se aceptan valores numericos")
+    @Size(min = 6, max = 8)
     private String matricula;
 
 

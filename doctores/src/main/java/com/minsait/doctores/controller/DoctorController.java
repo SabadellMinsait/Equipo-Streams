@@ -4,16 +4,20 @@ import com.minsait.doctores.entities.Doctor;
 import com.minsait.doctores.entities.Especialidad;
 import com.minsait.doctores.service.DoctorService;
 import com.minsait.doctores.service.EspecialidadService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/doctor")
+@RequestMapping("/v1/api/doctores")
 public class DoctorController {
     @Autowired
     DoctorService doctorservice;
@@ -25,7 +29,7 @@ public class DoctorController {
 
     }
     @GetMapping("/{id}")
-    public ResponseEntity<?> obtenerDoctor(@PathVariable Long id){
+    public ResponseEntity<?> findDoctor(@PathVariable Long id){
         Optional <Doctor> doctor = doctorservice.obtenerDoctor(id);
         if(doctor.isPresent()){
 
@@ -34,23 +38,37 @@ public class DoctorController {
         return ResponseEntity.notFound().build();
     }
     @PutMapping("/{id}")
-    public ResponseEntity<?> actualizarDoctor(@PathVariable Long id, @RequestBody Doctor doctor){
+    public ResponseEntity<?> updateDoctor(@PathVariable Long id, @RequestBody @Valid Doctor doctor, BindingResult result){
+       /* if (result.hasErrors()) {
+            return ResponseEntity.badRequest().body("Error de validación " + result.getAllErrors());
+        }*/
+        if (result.hasErrors()){
+            return validar(result);
+        }
         Optional <Doctor> doctorA = doctorservice.obtenerDoctor(id);
         if (doctorA.isPresent()){
 
             Doctor doctoractualizar = doctorA.get();
             doctoractualizar.setNombre(doctor.getNombre());
+            doctoractualizar.setApellido(doctor.getApellido());
+            doctoractualizar.setMatricula(doctor.getMatricula());
+            return ResponseEntity.status(HttpStatus.CREATED).body(doctoractualizar);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @PostMapping
-    public ResponseEntity<?> guardarDoctor(@RequestBody Doctor doctor){
-
+    public ResponseEntity<?> saveDoctor(@RequestBody @Valid Doctor doctor, BindingResult result){
+    /*if (result.hasErrors()){
+    return ResponseEntity.badRequest().body("Error de validación " + result.getAllErrors());
+}*/
+        if (result.hasErrors()){
+            return validar(result);
+        }
         Doctor doctorGuardado = doctorservice.guardarDoctor(doctor);
         return ResponseEntity.ok(doctorGuardado);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarDoctor(@PathVariable Long id){
+    public ResponseEntity<?> deleteDoctor(@PathVariable Long id){
 
         Optional <Doctor> doctoreliminado = doctorservice.obtenerDoctor(id);
         if(doctoreliminado.isPresent()){
@@ -61,14 +79,21 @@ public class DoctorController {
         return ResponseEntity.notFound().build();
     }
     @PostMapping("/Registrar_Especialidad/{especialidad_id}")
-    public ResponseEntity<?>registrarEspecialDoc(@RequestBody Doctor doctor, @PathVariable Long especialidad_id){
+    public ResponseEntity<?>regEspecialDoc(@RequestBody @Valid Doctor doctor, @PathVariable Long especialidad_id, BindingResult result){
+       /* if (result.hasErrors()) {
+            return ResponseEntity.badRequest().body("Error de validación " + result.getAllErrors());
+        }*/
+        if (result.hasErrors()){
+            return validar(result);
+        }
+
         Doctor doctor1 = doctorservice.regEspDoc(doctor, especialidad_id);
 
         return  ResponseEntity.status(HttpStatus.CREATED).body(doctor1);
     }
 
     @PostMapping("/Asignar_Especialidad/{id_doctor}/{especialidad_id}")
-    public ResponseEntity<?>asignarEspecialDoc(@PathVariable Long id_doctor, Long especialidad_id){
+    public ResponseEntity<?>asignEspecialDoc(@PathVariable Long id_doctor, Long especialidad_id){
 
         Optional<Doctor> doctorOp = doctorservice.obtenerDoctor(id_doctor);
         Optional<Especialidad> especialidadOpt = especialidadservice.obtenerEspecialidad(especialidad_id);
@@ -81,5 +106,11 @@ public class DoctorController {
         }
         return ResponseEntity.notFound().build();
     }
-
+    private ResponseEntity<Map<String, String>> validar(BindingResult result) {
+        Map<String, String> errores = new HashMap<>();
+        result.getFieldErrors().forEach(err -> {
+            errores.put(err.getField(), "El campo " + err.getField() + " " + err.getDefaultMessage());
+        });
+        return ResponseEntity.badRequest().body(errores);
+    }
 }
