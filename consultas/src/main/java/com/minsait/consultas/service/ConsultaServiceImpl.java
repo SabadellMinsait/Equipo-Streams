@@ -1,12 +1,15 @@
 package com.minsait.consultas.service;
 
 import com.minsait.consultas.model.entity.Consulta;
+import com.minsait.consultas.model.entity.DoctorDTO;
 import com.minsait.consultas.model.entity.HistorialMedico;
 import com.minsait.consultas.repository.ConsultaRepository;
 import com.minsait.consultas.repository.HistorialRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 import java.util.Optional;
@@ -79,4 +82,7 @@ public class ConsultaServiceImpl implements ConsultaService{
     public Optional<HistorialMedico> findByidPaciente(Long id) {
         return historialrepository.findByidPaciente(id);
     }
+
+
+
 }
