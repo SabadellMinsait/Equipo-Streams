@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 public class HistorialDTO {
 
-    public Long idhistorial;
+    public Long id;
 
     public Long idPaciente;
 
