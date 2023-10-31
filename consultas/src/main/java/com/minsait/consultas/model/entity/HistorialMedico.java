@@ -26,6 +26,7 @@ public class HistorialMedico {
     @NotBlank(message = "El id de paciente no puede ir vacío")
     @Pattern(regexp = "^[0-9]*$",message = "Solo se aceptan valores numericos")
     private Long idPaciente;
+
     @OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE},mappedBy = "historial")
     @JsonIgnore
     private List<Consulta> consulta;
