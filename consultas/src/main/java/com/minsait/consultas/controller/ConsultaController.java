@@ -52,27 +52,18 @@ ConsultaController {
 
     @PostMapping("/consultas")
     public ResponseEntity<Consulta>saveConsulta(@RequestBody Consulta consulta){
-        Optional<?>historialId =doctoresService.obtenerDoctor(consulta.getHistorial().getId());
-        Optional<?> doctorId =findByidDoctor(consulta.getIdDoctor());
-        if (!doctorId.isPresent()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        if (!historialId.isPresent())
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        try {
-            return ResponseEntity.status(HttpStatus.CREATED).body(service.saveConsulta(consulta));
-        }catch (Error e){
-            throw new IllegalArgumentException(e.getMessage());
-        }
+        Optional<?>doctorID =doctoresService.obtenerDoctor(consulta.getIdDoctor());
+        Optional<?> historialID =service.findHistorialByID(consulta.getHistorial().getId());
+        if (!doctorID.isPresent())
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        if (!historialID.isPresent())
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        if (historialID.get() == consulta.getHistorial().getId())
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.saveConsulta(consulta));
 
     }
-
-
-
-
-
-
-
 
 
 
@@ -124,55 +115,19 @@ ConsultaController {
     }
 
 
-    @PutMapping("/historial/{id}")
-    public ResponseEntity<HistorialMedico>updateHistorialMedico(@PathVariable Long id,@RequestBody HistorialMedico historial){
-        Optional<HistorialMedico>historial1=service.findHistorialByID(id);
-        Optional<PacienteDTO>pacienteId =pacientesService.findById(historial.getIdPaciente());
-        if (!historial1.isPresent()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        if (!pacienteId.isPresent()){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-
-        HistorialMedico HistorialMedicoAct=historial1.get();
-        HistorialMedicoAct.setIdPaciente(historial.getIdPaciente());
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(HistorialMedicoAct));
-    }
-
     @PostMapping("/historial")
     public ResponseEntity<HistorialMedico>saveHistorialMedico(@RequestBody HistorialMedico historial){
        Optional<?>pacienteId =pacientesService.findById(historial.getIdPaciente());
+       Optional<HistorialMedico> historialPaciente= service.findByidPaciente(historial.getIdPaciente());
+
+        if (historialPaciente.isPresent()){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
         if (!pacienteId.isPresent()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
        }
+
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(historial));
     }
-
-
-    @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "No souch of data")
-    public Optional<Consulta> findByidDoctor(Long id) {
-        Consulta consultaNew=new Consulta();
-        try {
-            consultaNew.setIdDoctor(doctoresService.obtenerDoctor(id).get().getId());
-            return Optional.of(consultaNew);
-        }catch (Exception e){
-            return Optional.of(consultaNew);
-        }
-    }
-
-
-    @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "No souch of data")
-    public Optional<HistorialMedico> findByidPaciente(Long id) {
-        HistorialMedico historialNew=new HistorialMedico();
-        try {
-            historialNew.setIdPaciente(pacientesService.findById(id).get().getId());
-            return Optional.of(historialNew);
-        }catch (Exception e){
-            return Optional.of(historialNew);
-        }
-    }
-
 
 }

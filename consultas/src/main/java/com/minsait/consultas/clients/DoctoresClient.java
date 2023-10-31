@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.Optional;
 
-@FeignClient(value = "msvc-doctores",url = "http://localhost:8092/doctor",dismiss404 = true)
+@FeignClient(value = "msvc-doctores",url = "http://localhost:8092/v1/api/doctores",dismiss404 = true)
 public interface DoctoresClient {
     @GetMapping("/{id}")
     public Optional<DoctorDTO> obtenerDoctor(@PathVariable Long id);
