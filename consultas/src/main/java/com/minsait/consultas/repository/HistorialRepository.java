@@ -9,4 +9,6 @@ import java.util.Optional;
 public interface HistorialRepository extends JpaRepository<HistorialMedico,Long> {
     Optional<HistorialMedico> findByidPaciente(Long idPaciente);
 
+
+
 }

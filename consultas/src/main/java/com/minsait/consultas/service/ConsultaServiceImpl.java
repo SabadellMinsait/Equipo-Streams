@@ -83,6 +83,4 @@ public class ConsultaServiceImpl implements ConsultaService{
         return historialrepository.findByidPaciente(id);
     }
 
-
-
 }

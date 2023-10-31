@@ -8,15 +8,17 @@ import java.util.Optional;
 
 public interface ConsultaService {
 
-    public List<Consulta>findConsultas();
-    public Optional<Consulta>findConsultaByID(Long id);
+    public List<Consulta> findConsultas();
+
+    public Optional<Consulta> findConsultaByID(Long id);
+
     public void deleteConsultaById(Long id);
+
     public Consulta saveConsulta(Consulta consulta);
 
 
+
     public Optional<HistorialMedico>findByidPaciente(Long id);
-
-
 
 
     public List<HistorialMedico>findHistorial();

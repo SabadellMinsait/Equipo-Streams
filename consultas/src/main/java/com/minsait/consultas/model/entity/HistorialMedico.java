@@ -27,7 +27,7 @@ public class HistorialMedico {
     @Pattern(regexp = "^[0-9]*$",message = "Solo se aceptan valores numericos")
     private Long idPaciente;
 
-    @OneToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE},mappedBy = "historial")
+    @OneToMany(mappedBy = "historial")
     @JsonIgnore
     private List<Consulta> consulta;
 
