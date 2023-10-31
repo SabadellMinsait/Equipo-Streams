@@ -1,0 +1,2 @@
+--INSERT INTO paciente (id_persona,nombre,apellido_paterno,apellido_materno,fecha_nacieminto, edad) VALUES (1,'Carlos', 'Tovar','Rosas','19940203',29);
+--INSERT INTO paciente_direccion (calle,numero,codigo_postal,colonia,estado,paciente_idpaciente) VALUES('palma',5,45678,'Granada','CDMX',1);
