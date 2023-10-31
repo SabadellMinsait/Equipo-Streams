@@ -4,13 +4,18 @@ import com.minsait.consultas.clients.DoctoresClient;
 import com.minsait.consultas.clients.PacientesClient;
 import com.minsait.consultas.model.entity.*;
 import com.minsait.consultas.service.ConsultaService;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/v1/api")
@@ -107,10 +112,18 @@ ConsultaController {
     @DeleteMapping("/historial/{id}")
     public ResponseEntity<HistorialMedico>deleteHistorialById(@PathVariable Long id){
         Optional<HistorialMedico>historial=service.findHistorialByID(id);
+
         if (!historial.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
+        List<Consulta>consultasEliminar=historial.get().getConsulta().stream().collect(Collectors.toList());
+
+        for (int i=0;i<consultasEliminar.stream().count();i++) {
+            service.deleteConsultaById((long)consultasEliminar.get(i).getId());
+        }
         service.deleteHistorialById(id);
+
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -129,5 +142,6 @@ ConsultaController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.saveHistorial(historial));
     }
+
 
 }
