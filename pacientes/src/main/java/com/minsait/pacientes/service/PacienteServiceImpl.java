@@ -59,12 +59,17 @@ public class PacienteServiceImpl implements PacienteService, DireccionService  {
             pacienteDTO.setEdad(pacienteEncontrado.get().getEdad());
             pacienteDTO.setFechaNacieminto(pacienteEncontrado.get().getFechaNacieminto());
             pacienteDTO.setDireccion(pacienteEncontrado.get().getDireccion());
+            pacienteDTO.setTotalConsuta((long) 0);
             PacienteDTO pacienteConsulta = new PacienteDTO();
             Optional<PacienteDTO> pacienteObtConsulta = findConsulta(id);
             if (pacienteObtConsulta.isPresent())
-            pacienteDTO.setHistorialDTO(pacienteObtConsulta.get().getHistorialDTO());
-            pacienteDTO.setTotalConsuta(pacienteDTO.getHistorialDTO().getConsulta().stream().count());
+                pacienteDTO.setHistorialDTO(pacienteObtConsulta.get().getHistorialDTO());
 
+            try {
+                pacienteDTO.setTotalConsuta(pacienteObtConsulta.get().getHistorialDTO().getConsulta().stream().count());
+            }catch (Exception e) {
+                pacienteDTO.setTotalConsuta((long) 0);
+            }
 
             return Optional.of(pacienteDTO);
 
@@ -102,6 +107,7 @@ public class PacienteServiceImpl implements PacienteService, DireccionService  {
     @Override
     @Transactional
     public void deleteById(Long id){
+        historialClient.deleteHistorialById(id);
         repository.deleteById(id);
         direccionRepository.deleteById(id);
     }
