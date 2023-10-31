@@ -69,8 +69,9 @@ public class PacienteController {
         Optional<Paciente> validaDatos= service.findById(id);
         if (!validaDatos.isPresent())
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
         service.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok().body("Paciente eliminado con exito");
     }
 
     @PutMapping("/updatepaciente")
